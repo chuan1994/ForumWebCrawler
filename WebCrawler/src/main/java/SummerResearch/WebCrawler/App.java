@@ -29,9 +29,9 @@ public class App
     	
     	CrawlConfig config = new CrawlConfig();
     	config.setCrawlStorageFolder("data/crawler");
-    	config.setMaxPagesToFetch(20);
-    	config.setPolitenessDelay(1000);
-    	config.setMaxDepthOfCrawling(10);
+    	config.setMaxPagesToFetch(20); //SET TO  -1 TO FETCH ALL PAGES
+    	config.setPolitenessDelay(1000); //OPTIONAL, DECREASE FOR SPEED
+    	config.setMaxDepthOfCrawling(10); //SET TO -1 TO INCREASE DEPTH
     	
     	PageFetcher pageFetcher = new PageFetcher(config);
     	RobotstxtConfig rtc = new RobotstxtConfig();
@@ -48,6 +48,9 @@ public class App
      * @param args
      */
     public static void setMode(String[] args){
+    	if(args.length != 1){
+    		return;
+    	}
     	
     	if(args[0].trim().toLowerCase().equals("xero")){
     		App.fD = ForumDetailExamples.getXeroDetails();    	
