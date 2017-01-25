@@ -1,0 +1,6 @@
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+WebCrawler/.project
+WebCrawler/.settings/
+WebCrawler/.classpath
